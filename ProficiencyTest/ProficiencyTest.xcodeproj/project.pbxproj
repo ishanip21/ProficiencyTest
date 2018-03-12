@@ -12,9 +12,9 @@
 		86EF434220561B7A0017E1CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86EF434020561B7A0017E1CB /* LaunchScreen.storyboard */; };
 		86EF434520561B7A0017E1CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF434420561B7A0017E1CB /* main.m */; };
 		86EF435D20561DED0017E1CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF435C20561DED0017E1CB /* AppDelegate.m */; };
-		86EF436920562A330017E1CB /* PTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF436820562A330017E1CB /* PTHomeViewController.m */; };
-		86EF436C20562ABC0017E1CB /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF436B20562ABC0017E1CB /* BaseTableViewController.m */; };
 		86EF436F20562E4F0017E1CB /* AboutCanada.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF436E20562E4F0017E1CB /* AboutCanada.m */; };
+		86EF437520563BAD0017E1CB /* PTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF437420563BAD0017E1CB /* PTHomeViewController.m */; };
+		86EF437920564B510017E1CB /* AboutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF437820564B510017E1CB /* AboutCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +26,12 @@
 		86EF434420561B7A0017E1CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		86EF435B20561DED0017E1CB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		86EF435C20561DED0017E1CB /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		86EF436720562A330017E1CB /* PTHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTHomeViewController.h; sourceTree = "<group>"; };
-		86EF436820562A330017E1CB /* PTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTHomeViewController.m; sourceTree = "<group>"; };
-		86EF436A20562ABC0017E1CB /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
-		86EF436B20562ABC0017E1CB /* BaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		86EF436D20562E4F0017E1CB /* AboutCanada.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutCanada.h; sourceTree = "<group>"; };
 		86EF436E20562E4F0017E1CB /* AboutCanada.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutCanada.m; sourceTree = "<group>"; };
+		86EF437320563BAD0017E1CB /* PTHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTHomeViewController.h; sourceTree = "<group>"; };
+		86EF437420563BAD0017E1CB /* PTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTHomeViewController.m; sourceTree = "<group>"; };
+		86EF437720564B510017E1CB /* AboutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutCell.h; sourceTree = "<group>"; };
+		86EF437820564B510017E1CB /* AboutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +106,7 @@
 		86EF436020561DFF0017E1CB /* CustomControllers */ = {
 			isa = PBXGroup;
 			children = (
+				86EF437620564B3C0017E1CB /* Cell */,
 			);
 			path = CustomControllers;
 			sourceTree = "<group>";
@@ -113,28 +114,19 @@
 		86EF436120561DFF0017E1CB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				86EF436220561DFF0017E1CB /* BaseViewControllers */,
-				86EF436320561DFF0017E1CB /* OtherViewControllers */,
+				86EF437320563BAD0017E1CB /* PTHomeViewController.h */,
+				86EF437420563BAD0017E1CB /* PTHomeViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		86EF436220561DFF0017E1CB /* BaseViewControllers */ = {
+		86EF437620564B3C0017E1CB /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				86EF436A20562ABC0017E1CB /* BaseTableViewController.h */,
-				86EF436B20562ABC0017E1CB /* BaseTableViewController.m */,
+				86EF437720564B510017E1CB /* AboutCell.h */,
+				86EF437820564B510017E1CB /* AboutCell.m */,
 			);
-			path = BaseViewControllers;
-			sourceTree = "<group>";
-		};
-		86EF436320561DFF0017E1CB /* OtherViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				86EF436720562A330017E1CB /* PTHomeViewController.h */,
-				86EF436820562A330017E1CB /* PTHomeViewController.m */,
-			);
-			path = OtherViewControllers;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,10 +201,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				86EF434520561B7A0017E1CB /* main.m in Sources */,
+				86EF437920564B510017E1CB /* AboutCell.m in Sources */,
 				86EF435D20561DED0017E1CB /* AppDelegate.m in Sources */,
-				86EF436C20562ABC0017E1CB /* BaseTableViewController.m in Sources */,
 				86EF436F20562E4F0017E1CB /* AboutCanada.m in Sources */,
-				86EF436920562A330017E1CB /* PTHomeViewController.m in Sources */,
+				86EF437520563BAD0017E1CB /* PTHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
