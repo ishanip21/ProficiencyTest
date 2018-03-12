@@ -15,6 +15,7 @@
 }
 
 #pragma mark - Replace null values to empty string
+
 - (NSDictionary*)removeNull {
     
     NSMutableDictionary *replaced = [NSMutableDictionary dictionaryWithDictionary: self];

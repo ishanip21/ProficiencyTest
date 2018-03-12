@@ -17,6 +17,7 @@
 		86EF437920564B510017E1CB /* AboutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF437820564B510017E1CB /* AboutCell.m */; };
 		86EF437C205652420017E1CB /* PTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF437B205652420017E1CB /* PTConstants.m */; };
 		86EF438020568B5D0017E1CB /* NSDictionary+NSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF437F20568B5D0017E1CB /* NSDictionary+NSDictionary.m */; };
+		86EF43822056B0DC0017E1CB /* sw_loadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86EF43812056B0DB0017E1CB /* sw_loadingView.xib */; };
 		A4792746A8076C6330210C40 /* libPods-ProficiencyTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C03A4507DAECB23C9372C35F /* libPods-ProficiencyTest.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		86EF437B205652420017E1CB /* PTConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTConstants.m; sourceTree = "<group>"; };
 		86EF437E20568B5D0017E1CB /* NSDictionary+NSDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NSDictionary.h"; sourceTree = "<group>"; };
 		86EF437F20568B5D0017E1CB /* NSDictionary+NSDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NSDictionary.m"; sourceTree = "<group>"; };
+		86EF43812056B0DB0017E1CB /* sw_loadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sw_loadingView.xib; sourceTree = "<group>"; };
 		C03A4507DAECB23C9372C35F /* libPods-ProficiencyTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProficiencyTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				86EF433B20561B7A0017E1CB /* Main.storyboard */,
 				86EF433E20561B7A0017E1CB /* Assets.xcassets */,
 				86EF434020561B7A0017E1CB /* LaunchScreen.storyboard */,
+				86EF43812056B0DB0017E1CB /* sw_loadingView.xib */,
 				86EF434320561B7A0017E1CB /* Info.plist */,
 				86EF434420561B7A0017E1CB /* main.m */,
 			);
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86EF434220561B7A0017E1CB /* LaunchScreen.storyboard in Resources */,
+				86EF43822056B0DC0017E1CB /* sw_loadingView.xib in Resources */,
 				86EF433F20561B7A0017E1CB /* Assets.xcassets in Resources */,
 				86EF433D20561B7A0017E1CB /* Main.storyboard in Resources */,
 			);
