@@ -7,8 +7,15 @@
 //
 
 #import "PTHomeViewController.h"
+#import <SWNetworking/UIImageView+SWNetworking.h>
+#import <SWNetworking/SWRequest.h>
+#import "PTConstants.h"
+#import "AboutCanada.h"
+#import "AboutCell.h"
 
-@interface PTHomeViewController ()
+@interface PTHomeViewController () {
+    NSArray *feedArray;
+}
 
 @end
 
@@ -16,6 +23,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.estimatedRowHeight = 100.0f;
+    self.tableView.rowHeight          = UITableViewAutomaticDimension;
+    
+    [self getDataFromAPI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -23,25 +35,86 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Custom methods
+-(void)showAlertWithMessage:(NSString *)str {
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:nil
+                                          message:str
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertController addAction:okButton];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - Action methods
+
+#pragma mark - API call
+
+- (void)getDataFromAPI {
+    SWGETRequest *getFeedRequest    = [[SWGETRequest alloc] init];
+    [getFeedRequest startDataTaskWithURL:FEED_URL
+                              parameters:nil
+                              parentView:self.navigationController.view
+                                 success:^(NSURLSessionDataTask *uploadTask, id responseObject) {
+        
+        NSError *error                  = nil;
+        NSString *string                = [[NSString alloc] initWithData:responseObject encoding:NSISOLatin1StringEncoding];
+        NSData *utf8Data                = [string dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *respondObject     = [NSJSONSerialization JSONObjectWithData:utf8Data options:NSJSONReadingMutableContainers error:&error];
+                                     
+        feedArray                       = [AboutCanada getFeedList:respondObject];
+                                     
+        if ([respondObject objectForKey:@"title"]) {
+         self.title = [respondObject objectForKey:@"title"];
+        }
+        
+        [self.tableView reloadData];
+                                     
+        NSLog(@"respond -->%@", uploadTask.swRequest.responseString);
+        
+    } failure:^(NSURLSessionTask *uploadTask, NSError *error) {
+        [self showAlertWithMessage:ERROR_MESSAGE];
+    }];
+}
+
+
+
+
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return 0;
-//}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [feedArray count];
+}
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    AboutCell *cell = [tableView dequeueReusableCellWithIdentifier:@"aboutCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"AboutCell" owner:self options:nil] objectAtIndex:0];
+    }
+    
+    AboutCanada *aboutCanada    = [feedArray objectAtIndex:indexPath.row];
+    cell.titleLabel.text        = aboutCanada.feedTitle;
+    cell.descriptionLabel.text  = aboutCanada.feedDescription;
+    
+    if (![aboutCanada.feedImageUrl isEqualToString:@""] && aboutCanada.feedImage == nil) {
+        [cell.aboutImageView loadWithURLString:aboutCanada.feedImageUrl loadFromCacheFirst:YES complete:^(UIImage *image) {
+            aboutCanada.feedImage = image;
+        }];
+        
+    } else {
+        [cell.aboutImageView setImage:aboutCanada.feedImage];
+    }
     
     return cell;
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
 
 /*
 // Override to support conditional editing of the table view.

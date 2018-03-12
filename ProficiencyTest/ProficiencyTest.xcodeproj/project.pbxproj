@@ -15,6 +15,8 @@
 		86EF436F20562E4F0017E1CB /* AboutCanada.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF436E20562E4F0017E1CB /* AboutCanada.m */; };
 		86EF437520563BAD0017E1CB /* PTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF437420563BAD0017E1CB /* PTHomeViewController.m */; };
 		86EF437920564B510017E1CB /* AboutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF437820564B510017E1CB /* AboutCell.m */; };
+		86EF437C205652420017E1CB /* PTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF437B205652420017E1CB /* PTConstants.m */; };
+		86EF438020568B5D0017E1CB /* NSDictionary+NSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EF437F20568B5D0017E1CB /* NSDictionary+NSDictionary.m */; };
 		A4792746A8076C6330210C40 /* libPods-ProficiencyTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C03A4507DAECB23C9372C35F /* libPods-ProficiencyTest.a */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,10 @@
 		86EF437420563BAD0017E1CB /* PTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTHomeViewController.m; sourceTree = "<group>"; };
 		86EF437720564B510017E1CB /* AboutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutCell.h; sourceTree = "<group>"; };
 		86EF437820564B510017E1CB /* AboutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutCell.m; sourceTree = "<group>"; };
+		86EF437A205652420017E1CB /* PTConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTConstants.h; sourceTree = "<group>"; };
+		86EF437B205652420017E1CB /* PTConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTConstants.m; sourceTree = "<group>"; };
+		86EF437E20568B5D0017E1CB /* NSDictionary+NSDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NSDictionary.h"; sourceTree = "<group>"; };
+		86EF437F20568B5D0017E1CB /* NSDictionary+NSDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NSDictionary.m"; sourceTree = "<group>"; };
 		C03A4507DAECB23C9372C35F /* libPods-ProficiencyTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProficiencyTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +111,8 @@
 		86EF435E20561DFF0017E1CB /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				86EF437A205652420017E1CB /* PTConstants.h */,
+				86EF437B205652420017E1CB /* PTConstants.m */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -121,6 +129,7 @@
 		86EF436020561DFF0017E1CB /* CustomControllers */ = {
 			isa = PBXGroup;
 			children = (
+				86EF437D20568AC60017E1CB /* Categories */,
 				86EF437620564B3C0017E1CB /* Cell */,
 			);
 			path = CustomControllers;
@@ -142,6 +151,15 @@
 				86EF437820564B510017E1CB /* AboutCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		86EF437D20568AC60017E1CB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				86EF437E20568B5D0017E1CB /* NSDictionary+NSDictionary.h */,
+				86EF437F20568B5D0017E1CB /* NSDictionary+NSDictionary.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		C73FDC4060462B8F7CB227A9 /* Pods */ = {
@@ -279,6 +297,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				86EF434520561B7A0017E1CB /* main.m in Sources */,
+				86EF438020568B5D0017E1CB /* NSDictionary+NSDictionary.m in Sources */,
+				86EF437C205652420017E1CB /* PTConstants.m in Sources */,
 				86EF437920564B510017E1CB /* AboutCell.m in Sources */,
 				86EF435D20561DED0017E1CB /* AppDelegate.m in Sources */,
 				86EF436F20562E4F0017E1CB /* AboutCanada.m in Sources */,
