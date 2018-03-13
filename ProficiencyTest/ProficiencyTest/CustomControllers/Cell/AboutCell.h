@@ -10,9 +10,9 @@
 
 @interface AboutCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *aboutImageView;
+@property (weak, nonatomic) IBOutlet UILabel            *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel            *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView        *aboutImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLeadingConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *descriptionLeadingConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewWidthConstraint;

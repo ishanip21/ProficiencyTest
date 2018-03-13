@@ -11,7 +11,8 @@
 
 @implementation AboutCanada
 
-- (id)initWithList:(NSDictionary *)dictionary {
+- (id)initWithDictionary:(NSDictionary *)dictionary {
+    
     self = [super init];
     
     if (self) {
@@ -19,10 +20,8 @@
             
             if ([key isEqualToString:@"title"]) {
                 self.feedTitle = [dictionary objectForKey:@"title"];
-                
             } else if ([key isEqualToString:@"description"]) {
                 self.feedDescription = [dictionary objectForKey:@"description"];
-                
             } else if ([key isEqualToString:@"imageHref"]) {
                 self.feedImageUrl = [dictionary objectForKey:@"imageHref"];
             }
@@ -32,14 +31,14 @@
 }
 
 + (NSArray *)getFeedList:(NSDictionary *)response {
+    
     NSMutableArray *feedArray = [[NSMutableArray alloc] init];
     
     for (NSDictionary *object in [response objectForKey:@"rows"]) {
         NSDictionary *customObject = [object dictionaryRemovingNSNullValues];
         
-        [feedArray addObject:[[AboutCanada alloc] initWithList:customObject]];
+        [feedArray addObject:[[AboutCanada alloc] initWithDictionary:customObject]];
     }
-    
     return feedArray;
 }
 

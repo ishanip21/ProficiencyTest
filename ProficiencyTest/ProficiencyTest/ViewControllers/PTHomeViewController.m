@@ -37,10 +37,11 @@
 
 #pragma mark - Custom methods
 
--(void)showAlertWithMessage:(NSString *)str {
+-(void)showAlertWithMessage:(NSString *)message {
+    
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:nil
-                                          message:str
+                                          message:message
                                           preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
@@ -52,6 +53,7 @@
 #pragma mark - Action methods
 
 - (IBAction)tapRefresh:(UIBarButtonItem *)sender {
+    
     [self getDataFromAPI];
     feedArray = nil;
     [self.tableView reloadData];
@@ -125,7 +127,6 @@
             //Set image, already download image object
             [cell.aboutImageView setImage:aboutCanada.feedImage];
         }
-        
     } else {
         //Image url is empty, reset the constant and hide the image view
         [cell.aboutImageView setHidden:YES];
@@ -134,7 +135,6 @@
         cell.imageViewWidthConstraint.constant      = 0.0f;
         cell.imageViewHeightConstraint.constant     = 0.0f;
     }
-    
     return cell;
 }
 
